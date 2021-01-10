@@ -166,12 +166,10 @@ $(".card .list-group").sortable({
         $(".bottom-trash").removeClass("bottom-trash-drag");
     },
     over: function(event) {
-        $(this).addClass("dropover-active"),
-        $(".bottom-trash").addClass("bottom-trash-active");
+        $(this).addClass("dropover-active");
     },
     out: function(event) {
         $(this).removeClass("dropover-active")
-        $(".bottom-trash").removeClass("bottom-trash-active");
     },
     update: function(event) {
         var tempArr = [];
@@ -207,8 +205,10 @@ $("#trash").droppable({
         ui.draggable.remove();
     },
     over: function(event, ui) {
+        $(".bottom-trash").addClass("bottom-trash-active");
     },
     out: function(event, ui) {
+        $(".bottom-trash").removeClass("bottom-trash-active");
     }
 });
 
